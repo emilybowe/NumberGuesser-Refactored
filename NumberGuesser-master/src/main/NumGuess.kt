@@ -1,13 +1,12 @@
 import java.lang.NumberFormatException
 
 fun main(args: Array<String>) {
-    val game = Game()
-    val num = game.generate()
+    val game = Game(RandomNumber(100))
 
     while (true) {
         println("Guess the number")
         try {
-            if(game.compare(num, readLine()!!.toInt())) {
+            if(game.compare(readLine()!!.toInt())) {
                 break
             }
         } catch (e: NumberFormatException) {

@@ -1,14 +1,7 @@
-import java.security.SecureRandom
+class Game (var number: Number) {
+    val guess = number.generate()
 
-class Game () : Number{
-    var bound: Int = 100
-
-    override fun generate() : Int{
-        var secureRandom = SecureRandom()
-        return secureRandom.nextInt(bound)
-    }
-
-    override fun compare(number: Int, guess: Int) : Boolean{
+    fun compare(number: Int) : Boolean{
         if(number > guess) {
             println("Too small")
         } else if (number < guess) {
